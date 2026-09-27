@@ -63,7 +63,7 @@
       open = true;
       modesetting.enable = true;
       nvidiaSettings = true;
-      powerManagement.enable = false;
+      powerManagement.enable = true;
     };
 
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

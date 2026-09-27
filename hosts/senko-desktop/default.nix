@@ -31,6 +31,7 @@
 
     supportedFilesystems = [ "ntfs" ];
     tmp.useTmpfs = true;
+    kernelParams = [ "nohibernate" ];
   };
 
   time.timeZone = "Asia/Tbilisi";
