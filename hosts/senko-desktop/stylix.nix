@@ -4,7 +4,7 @@
     enable = true;
     polarity = "dark";
 
-    image = ../wallpapers/main.jpg;
+    image = ../../wallpapers/main.jpg;
 
     base16Scheme = {
       scheme = "Dark AMOLED";

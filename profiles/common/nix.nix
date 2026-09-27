@@ -3,8 +3,8 @@ _: {
 
   nixpkgs.overlays = [
     (final: _prev: {
-      helium = final.callPackage ../pkgs/helium.nix { };
-      apple-color-emoji = final.callPackage ../pkgs/apple-color-emoji.nix { };
+      helium = final.callPackage ../../pkgs/helium.nix { };
+      apple-color-emoji = final.callPackage ../../pkgs/apple-color-emoji.nix { };
     })
   ];
 

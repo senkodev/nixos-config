@@ -51,6 +51,23 @@
     { device = "/dev/mapper/luks-ebecfdea-797e-4dd4-9c20-1f7b587c9d1b"; }
   ];
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    nvidia = {
+      open = true;
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      powerManagement.enable = false;
+    };
+
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
