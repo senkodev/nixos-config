@@ -27,6 +27,7 @@
       trayscale
       prismlauncher
       r2modman
+      termius
     ];
   };
 }
