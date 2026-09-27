@@ -25,7 +25,12 @@
     gnupg
     yubikey-manager
     yubikey-personalization
+    lm_sensors
+    zenmonitor
+    mission-center
   ];
+
+  boot.kernelModules = [ "msr" ];
 
   services = {
     pcscd.enable = true;

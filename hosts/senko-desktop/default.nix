@@ -31,7 +31,10 @@
 
     supportedFilesystems = [ "ntfs" ];
     tmp.useTmpfs = true;
-    kernelParams = [ "nohibernate" ];
+    kernelParams = [
+      "nohibernate"
+      "amd_pstate=active"
+    ];
   };
 
   time.timeZone = "Asia/Tbilisi";
@@ -47,6 +50,9 @@
     printing.enable = true;
     fwupd.enable = true;
   };
+
+  # fixed audio crackles under high cpu load
+  security.rtkit.enable = true;
 
   hardware.bluetooth.enable = true;
 
