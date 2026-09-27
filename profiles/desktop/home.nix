@@ -131,6 +131,23 @@ in
             "gtk-4.0/gtk.css".force = true;
           };
 
+          autostart = {
+            enable = true;
+            entries = [
+              "${pkgs._1password-gui}/share/applications/1password.desktop"
+
+              "${
+                pkgs.runCommandLocal "trayscale-autostart" { } ''
+                  mkdir -p $out
+                  substitute \
+                    ${pkgs.trayscale}/share/applications/dev.deedles.Trayscale.desktop \
+                    $out/dev.deedles.Trayscale.desktop \
+                    --replace-fail "Exec=trayscale %F" "Exec=trayscale --hide-window"
+                ''
+              }/dev.deedles.Trayscale.desktop"
+            ];
+          };
+
           systemDirs.config = lib.mkAfter [
             "${pkgs.runCommandLocal "plasma-stylix-defaults"
               {
